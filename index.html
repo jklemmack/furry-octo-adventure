@@ -3,24 +3,8 @@
   <script src="lib/angular.js"></script>
 	<script src="lib/jquery.js"></script>
   <script src="js/controllers.js"></script>
-	<script type="application/javascript">
-	$(function(){
-		$('#test').click(function(e){
-			var data;
-			
-			$.get('data.js', function(x) {
-					data = JSON.parse(x);
-				alert(data.length);
-				})
-				.fail(function(e) {
-					alert('fail');
-				});
-		});
-	});
-	</script>
 </head>
 <body ng-controller="PhoneListCtrl">
-		<button id="test">test</button>
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span2">
