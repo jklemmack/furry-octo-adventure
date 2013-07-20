@@ -1,12 +1,32 @@
-<!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <script src="http://debug.phonegap.com/target/target-script-min.js#furry-octo-adventure"></script>
-    <script data-main="js/app" src="lib/require.js"></script>
+  <script src="lib/angular.js"></script>
+  <script src="js/controllers.js"></script>
 </head>
-    
-<body>Frist test :)</body>
+<body ng-controller="PhoneListCtrl">
 
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2">
+          <!--Sidebar content-->
+     
+          Search: <input ng-model="query">
+     
+        </div>
+        <div class="span10">
+          <!--Body content-->
+     
+          <ul class="phones">
+            <li ng-repeat="phone in phones | filter:query">
+              {{phone.name}}
+              <p>{{phone.snippet}}</p>
+							
+            </li>
+          </ul>
+     
+        </div>
+      </div>
+    </div>
+</body>
 </html>
+
